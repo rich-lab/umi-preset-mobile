@@ -3,15 +3,15 @@ import type { IApi } from '@umijs/types';
 import { dirname } from 'path';
 
 /**
- * 关闭@umijs/plugin-antd插件，但开启antd-mobile的功能
+ * 关闭@umijs/plugin-antd插件，但开启antd-mobile@5
  */
 export default (api: IApi) => {
   api.describe({
     key: 'antdCompat',
     config: {
       schema: (joi) => joi.object(),
+      default: {},
     },
-    default: {},
     // enableBy: api.EnableBy.config, // 用户配置开启
   });
 
