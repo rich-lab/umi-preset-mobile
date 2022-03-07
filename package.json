@@ -40,7 +40,6 @@
     "react": "^16"
   },
   "dependencies": {
-    "antd-mobile": "^5.4.0",
     "postcss-plugin-px2rem": "^0.8.1",
     "umi-hd": "^5"
   },
