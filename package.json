@@ -19,7 +19,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "prepublishOnly": "npm run build",
-    "release": "np"
+    "release": "npm run build && np"
   },
   "husky": {
     "hooks": {
