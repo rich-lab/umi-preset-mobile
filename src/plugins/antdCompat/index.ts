@@ -11,7 +11,8 @@ export default (api: IApi) => {
     config: {
       schema: (joi) => joi.object(),
     },
-    enableBy: api.EnableBy.config, // 用户配置开启
+    default: {},
+    // enableBy: api.EnableBy.config, // 用户配置开启
   });
 
   if (!api.userConfig?.antdCompat) return;

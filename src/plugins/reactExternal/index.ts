@@ -57,7 +57,6 @@ export default (api: IApi) => {
         });
       },
     },
-    enableBy: api.EnableBy.config, // 配置开启
   });
 
   // 设置 React external

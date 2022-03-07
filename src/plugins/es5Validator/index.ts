@@ -111,24 +111,15 @@ export default (api: IApi) => {
       },
     },
     // 配置开启
-    enableBy: api.EnableBy.config,
+    // enableBy: api.EnableBy.config,
   });
 
-  // ACI/本地CI时跳过 validator，不然跑CI会卡住
-  if (
-    (!!process.env.CI && !!process.env.ACI_JOB_ID) ||
-    process.env.__FROM_UMI_TEST
-  ) {
+  // CI时跳过 validator，不然跑CI会卡住
+  if (!!process.env.CI || process.env.__FROM_UMI_TEST) {
     return console.log('[es5Validator] ci跳过检查');
   }
 
   api.chainWebpack((memo) => {
-    // const isWebpack5 = !!api.config.webpack5;
-
-    // if (!isWebpack5) {
-    //   memo.output.futureEmitAssets(false);
-    // }
-
     memo.plugin('ecma5-validate').use(ES5ValidateWebpackPlugin, [api]);
     return memo;
   });
